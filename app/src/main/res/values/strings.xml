@@ -1,4 +1,36 @@
 <resources>
-    <string name="app_name">Raven</string>
+    <string name="app_name">信鸦</string>
     <string name="title_activity_main">MainActivity</string>
+
+    <string name="auth_title_new">登录信鸦</string>
+    <string name="auth_title_update">更新密码</string>
+    <string name="auth_title_confirm">确认密码</string>
+    <string name="auth_username">用户名</string>
+    <string name="auth_password">密码</string>
+    <string name="auth_sign_in">登录</string>
+    <string name="auth_sign_up">没有账户？现在注册</string>
+    <string name="auth_error_empty_username">请输入用户名</string>
+    <string name="auth_error_empty_password">请输入密码</string>
+    <string name="auth_error_invalid_response">服务器应答无效</string>
+    <string name="auth_error_unknown">未知错误</string>
+
+    <string name="sign_up_hint_title">加入信鸦吧!</string>
+    <string name="sign_up_hint_username">用户名</string>
+    <string name="sign_up_hint_email">邮箱</string>
+    <string name="sign_up_hint_phone">手机号码</string>
+    <string name="sign_up_hint_password">密码</string>
+    <string name="sign_up_hint_password_confirm">确认密码</string>
+    <string name="sign_up">注册</string>
+
+    <string name="image_content_checkbox"/>
+
+    <string name="user_profile_email">邮箱</string>
+    <string name="user_profile_phone">手机号码</string>
+    <string name="user_profile_logout">退出登陆</string>
+
+    <string name="draft_hint">请告诉信鸦要发送什么内容…</string>
+    <string name="draft_send">发送</string>
+
+    <string name="raven_from">来自</string>
+
 </resources>

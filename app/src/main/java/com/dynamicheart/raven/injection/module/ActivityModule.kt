@@ -7,10 +7,6 @@ import com.dynamicheart.raven.injection.PerActivity
 import dagger.Module
 import dagger.Provides
 
-/**
- * Created by dynamicheart on 20/8/2017.
- */
-
 @Module
 class ActivityModule(private val activity: Activity) {
 

@@ -1,6 +1,6 @@
-package com.dynamicheart.raven.data.model.feedback
+package com.dynamicheart.raven.data.model.reply
 
-import com.dynamicheart.raven.data.model.feedback.Poll.Poll
+import com.dynamicheart.raven.data.model.reply.Poll.Poll
 
 /**
  * Created by jianbangyang on 2017/9/5.

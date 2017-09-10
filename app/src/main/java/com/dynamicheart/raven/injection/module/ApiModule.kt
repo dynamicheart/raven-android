@@ -13,10 +13,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-/**
- * Created by dynamicheart on 21/8/2017.
- *
- */
 @Module
 class ApiModule {
 

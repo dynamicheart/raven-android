@@ -1,7 +1,6 @@
 package com.dynamicheart.raven.ui.base
 
 import android.annotation.SuppressLint
-import android.net.wifi.hotspot2.ConfigParser
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.dynamicheart.raven.RavenApplication
@@ -12,10 +11,6 @@ import com.dynamicheart.raven.injection.module.ActivityModule
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicLong
 
-/**
- * Created by dynamicheart on 16/8/2017.
- *
- */
 @SuppressLint("Registered")
 open class BaseActivity : AppCompatActivity() {
 

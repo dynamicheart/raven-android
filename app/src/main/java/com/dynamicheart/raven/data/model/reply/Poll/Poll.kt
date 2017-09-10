@@ -1,4 +1,4 @@
-package com.dynamicheart.raven.data.model.feedback.Poll
+package com.dynamicheart.raven.data.model.reply.Poll
 
 /**
  * Created by jianbangyang on 2017/9/5.

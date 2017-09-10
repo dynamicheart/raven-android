@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme.NoActionBar">
 
         <activity
-            android:name="com.dynamicheart.raven.ui.account.authenticator.AuthenticatorActivity"
+            android:name="com.dynamicheart.raven.ui.account.AuthenticatorActivity"
             android:launchMode="singleTop" />
 
         <activity

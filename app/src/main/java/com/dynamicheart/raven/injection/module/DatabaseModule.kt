@@ -7,10 +7,6 @@ import io.realm.Realm
 import io.realm.RealmConfiguration
 import javax.inject.Singleton
 
-/**
- * Created by jianbangyang on 2017/9/4.
- *
- */
 @Module
 class DatabaseModule {
 
