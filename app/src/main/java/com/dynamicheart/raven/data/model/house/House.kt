@@ -1,17 +1,20 @@
 package com.dynamicheart.raven.data.model.house
 
+import com.dynamicheart.raven.data.model.house.member.Member
+import com.dynamicheart.raven.data.model.ref.UserRef
 import java.util.*
 
-/**
- * Created by jianbangyang on 2017/9/5.
- */
 data class House(
-        val id: String,
-        val name: String,
-        val description: String,
-        val status: Int,
-        val capacity: Int,
-        val memberNumbers: Int,
-        val tags: Set<String>,
-        val createdDate: Date
+        var id: String?,
+        var name: String?,
+        var description: String?,
+        var status: Int?,
+        var capacity: Int?,
+        var memberNumbers: Int?,
+        var sigil: String?,
+        var publicity: Boolean?,
+        var tags: Set<String>?,
+        var founder: UserRef?,
+        var members: Set<Member>?,
+        var createdDate: Date?
 )

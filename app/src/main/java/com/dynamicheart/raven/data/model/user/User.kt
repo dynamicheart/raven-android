@@ -1,14 +1,15 @@
 package com.dynamicheart.raven.data.model.user
 
 import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
+import java.util.*
 
-/**
- * Created by dynamicheart on 20/8/2017.
- */
 open class User: RealmObject(){
-    val id: Long? = null
+    @PrimaryKey var id: String? = null
     var username: String? = null
     var email: String? = null
     var phoneNumber: String? = null
-    val avatar: String? = null
+    var avatar: String? = null
+    var status: Int? = null
+    var createdDate: Date? = null
 }

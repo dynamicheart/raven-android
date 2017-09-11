@@ -6,9 +6,6 @@ import com.dynamicheart.raven.injection.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
-/**
- * Created by dynamicheart on 20/8/2017.
- */
 @Singleton
 class PreferencesHelper
 @Inject constructor(@ApplicationContext context: Context) {

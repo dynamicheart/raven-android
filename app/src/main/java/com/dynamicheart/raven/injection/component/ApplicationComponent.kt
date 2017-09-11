@@ -5,9 +5,12 @@ import android.content.Context
 import com.dynamicheart.raven.data.DataManager
 import com.dynamicheart.raven.data.AccountManager
 import com.dynamicheart.raven.data.local.PreferencesHelper
+import com.dynamicheart.raven.data.remote.LeanCloudService
+import com.dynamicheart.raven.data.remote.RavenService
 import com.dynamicheart.raven.injection.ApplicationContext
 import com.dynamicheart.raven.injection.module.ApplicationModule
 import com.dynamicheart.raven.injection.module.DataModule
+import com.dynamicheart.raven.util.ToastHelper
 import dagger.Component
 import javax.inject.Singleton
 
@@ -18,6 +21,9 @@ interface ApplicationComponent {
     @ApplicationContext fun context(): Context
     fun application(): Application
     fun preferencesHelper(): PreferencesHelper
+    fun ravenService(): RavenService
+    fun leanCloudService(): LeanCloudService
     fun dataManger(): DataManager
     fun accountManager(): AccountManager
+    fun toastHelper(): ToastHelper
 }

@@ -55,6 +55,7 @@
                     android:layout_marginTop="8dp">
 
                     <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edit_text_sign_up_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/sign_up_hint_username" />
@@ -67,6 +68,7 @@
                     android:layout_marginTop="8dp">
 
                     <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edit_text_sign_up_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress"
@@ -80,6 +82,7 @@
                     android:layout_marginTop="8dp">
 
                     <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edit_text_sign_up_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="phone"
@@ -93,6 +96,7 @@
                     android:layout_marginTop="8dp">
 
                     <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edit_text_sign_up_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/auth_password"
@@ -106,6 +110,7 @@
                     android:layout_marginTop="8dp">
 
                     <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edit_text_sign_up_password_confirm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/auth_title_confirm"
@@ -113,6 +118,7 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <Button
+                    android:id="@+id/button_sign_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"

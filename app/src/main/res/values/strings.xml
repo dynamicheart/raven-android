@@ -33,4 +33,12 @@
 
     <string name="raven_from">来自</string>
 
+
+    <string name="message_installation_fail">设备注册失败，无法使用信鸦服务</string>
+    <string name="message_password_inconsistent">两次输入的密码不一致</string>
+
+
+    <string name="navigation_drawer_open">抽屉导航栏开启</string>
+    <string name="navigation_drawer_close">抽屉导航栏关闭</string>
+
 </resources>
