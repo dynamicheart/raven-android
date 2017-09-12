@@ -74,7 +74,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/image_house_sigil" />
 
                 <TextView
-                    android:id="@+id/text_user_description"
+                    android:id="@+id/text_house_description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -96,7 +96,7 @@
                     android:layout_marginTop="8dp"
                     android:background="#D6D6D6"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_user_description" />
+                    app:layout_constraintTop_toBottomOf="@+id/text_house_description" />
 
                 <TextView
                     android:id="@+id/text_label_founder"
@@ -156,9 +156,9 @@
                     android:singleLine="true"
                     android:textAlignment="textEnd"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/text_house_created_time"
+                    app:layout_constraintStart_toEndOf="@+id/text_label_created_time"
                     app:layout_constraintTop_toBottomOf="@+id/view_divider2"
-                    tools:text="臧斌宇" />
+                    tools:text="2017年" />
 
                 <View
                     android:id="@+id/view_divider3"
@@ -177,7 +177,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:labelFor="@id/text_user_description"
-                    android:text="@string/house_founder_name"
+                    android:text="@string/house_total_number"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view_divider3" />
 
@@ -194,7 +194,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/text_label_founder"
                     app:layout_constraintTop_toBottomOf="@+id/view_divider3"
-                    tools:text="臧斌宇" />
+                    tools:text="25人" />
 
                 <View
                     android:id="@+id/view_divider4"
@@ -204,21 +204,21 @@
                     android:layout_marginTop="8dp"
                     android:background="#D6D6D6"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_house_founder_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/text_house_total_number" />
 
                 <TextView
-                    android:id="@+id/text_label_founder"
+                    android:id="@+id/text_label_publicity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:labelFor="@id/text_user_description"
-                    android:text="@string/house_founder_name"
+                    android:text="@string/house_publicity"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view_divider1" />
+                    app:layout_constraintTop_toBottomOf="@+id/view_divider4" />
 
                 <TextView
-                    android:id="@+id/text_house_founder_name"
+                    android:id="@+id/text_house_publicity"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -229,32 +229,32 @@
                     android:textAlignment="textEnd"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/text_label_founder"
-                    app:layout_constraintTop_toBottomOf="@+id/view_divider1"
-                    tools:text="臧斌宇" />
+                    app:layout_constraintTop_toBottomOf="@+id/view_divider4"
+                    tools:text="公开" />
 
                 <View
-                    android:id="@+id/view_divider2"
+                    android:id="@+id/view_divider5"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:background="#D6D6D6"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_house_founder_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/text_house_publicity" />
 
                 <TextView
-                    android:id="@+id/text_label_founder"
+                    android:id="@+id/text_label_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:labelFor="@id/text_user_description"
-                    android:text="@string/house_founder_name"
+                    android:text="@string/house_status"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view_divider1" />
+                    app:layout_constraintTop_toBottomOf="@+id/view_divider5" />
 
                 <TextView
-                    android:id="@+id/text_house_founder_name"
+                    android:id="@+id/text_house_status"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -265,18 +265,18 @@
                     android:textAlignment="textEnd"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/text_label_founder"
-                    app:layout_constraintTop_toBottomOf="@+id/view_divider1"
+                    app:layout_constraintTop_toBottomOf="@+id/view_divider5"
                     tools:text="臧斌宇" />
 
                 <View
-                    android:id="@+id/view_divider2"
+                    android:id="@+id/view_divider6"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:background="#D6D6D6"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_house_founder_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/text_house_status" />
 
                 <Button
                     android:id="@+id/button_edit"
@@ -286,11 +286,11 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/user_profile_logout"
+                    android:text="@string/house_edit"
                     android:textAppearance="?android:textAppearanceButton"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view_divider2" />
+                    app:layout_constraintTop_toBottomOf="@+id/view_divider6" />
 
             </android.support.constraint.ConstraintLayout>
 

@@ -3,6 +3,7 @@ package com.dynamicheart.raven.data.remote
 import com.dynamicheart.raven.data.model.house.House
 import com.dynamicheart.raven.data.model.house.form.CreateHouseForm
 import com.dynamicheart.raven.data.model.leancloud.Installation
+import com.dynamicheart.raven.data.model.leancloud.form.UpdateInstallationForm
 import com.dynamicheart.raven.data.model.raven.InRaven
 import com.dynamicheart.raven.data.model.raven.Raven
 import com.dynamicheart.raven.data.model.token.Token
@@ -21,7 +22,7 @@ interface RavenService {
     fun createNewUser(@Body createUserForm: CreateUserForm): Observable<User>
 
     @POST("user/installation")
-    fun uploadInstallation(@Body installationId: String): Observable<Installation>
+    fun uploadInstallation(@Body updateInstallationForm: UpdateInstallationForm): Observable<Installation>
 
     @POST("tokens")
     fun login(@Body loginForm: LoginForm): Observable<Token>

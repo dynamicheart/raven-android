@@ -9,7 +9,7 @@
     <item
         android:id="@+id/menu_house_join"
         android:title="@string/menu_join_house"
-        android:icon="@drawable/ic_camera_alt_black_24dp"
+        android:icon="@drawable/ic_search_black_24dp"
         android:checkable="false"/>
     <item
         android:id="@+id/menu_user_profile"

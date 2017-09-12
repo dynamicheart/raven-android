@@ -80,6 +80,7 @@ dependencies {
     implementation 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2'
 
     implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.github.arimorty:floatingsearchview:2.1.1'
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     implementation 'com.github.PhilJay:MPAndroidChart-Realm:v2.0.2@aar'

@@ -9,6 +9,7 @@ import com.dynamicheart.raven.injection.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
 import com.dynamicheart.raven.data.model.leancloud.Installation
+import com.dynamicheart.raven.data.model.leancloud.form.UpdateInstallationForm
 import com.dynamicheart.raven.data.remote.RavenService
 import com.dynamicheart.raven.util.ToastHelper
 import com.dynamicheart.raven.util.leancloud.ImMessageHandler
@@ -54,8 +55,9 @@ class LeanCloudManager
             })
         })
                 .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(Schedulers.io())
                 .flatMap({ uploadInstallation(it) })
-                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy(
                         onNext = {
                             leanCloudServiceEnabled = true
@@ -69,6 +71,6 @@ class LeanCloudManager
     }
 
     private fun uploadInstallation(installation: Installation): Observable<Installation> {
-        return ravenService.uploadInstallation(installation.installationId)
+        return ravenService.uploadInstallation(UpdateInstallationForm(installation.installationId))
     }
 }

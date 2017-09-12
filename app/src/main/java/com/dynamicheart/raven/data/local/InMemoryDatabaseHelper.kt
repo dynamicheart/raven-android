@@ -11,6 +11,11 @@ class InMemoryDatabaseHelper
         @JvmStatic val dbManager = HashMap<String, HashMap<String, Any>>()
     }
 
+    fun get(activityId: String, key: String): Any?{
+        val db = dbManager[activityId]?: HashMap<String, Any>()
+        return db[key]
+    }
+
     fun store(activityId: String, key: String, value: Any){
         val db = dbManager[activityId]?: HashMap<String, Any>()
         db[key] =  value

@@ -43,7 +43,7 @@
     <string name="house_founder_name">创始人</string>
     <string name="house_created_time">创建时间</string>
     <string name="house_total_number">总人数</string>
-    <string name="house_private">公开性</string>
+    <string name="house_publicity">公开性</string>
     <string name="house_status">状态</string>
     <string name="house_edit">编辑资料</string>
 

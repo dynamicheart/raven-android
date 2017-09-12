@@ -19,6 +19,11 @@ import javax.inject.Inject
 
 class HouseFragment : BaseFragment(), HouseContract.View {
 
+    companion object {
+        @JvmStatic val IN_MEMORY_DB_CURRENT_HOUSE = "IN_MEMORY_DB_CURRENT_HOUSE"
+        @JvmStatic val IN_MEMORY_DB_HOUSE_INDEX = "IN_MEMORY_DB_HOUSE_INDEX"
+    }
+
     @Inject lateinit var presenter: HousePresenter
     @Inject lateinit var toastHelper: ToastHelper
     @Inject lateinit var housesAdapter: HousesAdapter
@@ -39,8 +44,9 @@ class HouseFragment : BaseFragment(), HouseContract.View {
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.addOnItemTouchListener(RecyclerItemClickListener(activity, recyclerView, object : RecyclerItemClickListener.OnItemClickListener {
             override fun onItemClick(view: View, position: Int) {
-                val house = housesAdapter.houses[position]
                 val intent = Intent(activity, HouseDetailActivity::class.java)
+                intent.putExtra(IN_MEMORY_DB_HOUSE_INDEX, position)
+                startActivity(intent)
             }
 
             override fun onLongItemClick(view: View?, position: Int) {
