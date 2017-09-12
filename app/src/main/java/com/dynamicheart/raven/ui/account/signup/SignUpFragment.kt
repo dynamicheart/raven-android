@@ -31,7 +31,6 @@ class SignUpFragment: BaseFragment(), SignUpContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fragmentComponent.inject(this)
-        presenter.attachView(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -56,7 +55,7 @@ class SignUpFragment: BaseFragment(), SignUpContract.View {
 
             presenter.signUp(createUserForm)
         })
-
+        presenter.attachView(this)
         return view
     }
 

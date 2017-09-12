@@ -16,13 +16,14 @@ class OutboxFragment : BaseFragment(),OutboxContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fragmentComponent.inject(this)
-        presenter.attachView(this)
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = layoutInflater.inflate(R.layout.fragment_house, container, false)
+        val view = layoutInflater.inflate(R.layout.fragment_outbox, container, false)
         ButterKnife.bind(this, view)
 
+        presenter.attachView(this)
         return view
     }
 

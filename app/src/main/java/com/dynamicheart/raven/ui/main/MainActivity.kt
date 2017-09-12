@@ -13,19 +13,24 @@ import android.support.v4.view.ViewPager
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.dynamicheart.raven.R
 import com.dynamicheart.raven.data.AccountManager
+import com.dynamicheart.raven.data.LeanCloudManager
 import com.dynamicheart.raven.data.model.user.User
 import com.dynamicheart.raven.ui.base.BaseActivity
+import com.dynamicheart.raven.ui.createhouse.CreateHouseActivity
 import com.dynamicheart.raven.ui.draft.DraftActivity
+import com.dynamicheart.raven.ui.housedetail.HouseDetailActivity
 import com.dynamicheart.raven.ui.main.conferbox.ConferBoxFragment
 import com.dynamicheart.raven.ui.main.house.HouseFragment
 import com.dynamicheart.raven.ui.main.inbox.InboxFragment
 import com.dynamicheart.raven.ui.main.outbox.OutboxFragment
+import com.dynamicheart.raven.ui.user.UserActivity
 import de.hdodenhof.circleimageview.CircleImageView
 import java.util.ArrayList
 import javax.inject.Inject
@@ -34,6 +39,7 @@ class MainActivity : BaseActivity(), MainContract.View,NavigationView.OnNavigati
 
     @Inject lateinit var presenter: MainPresenter
     @Inject lateinit var accountManager: AccountManager
+    @Inject lateinit var leanCloudManager: LeanCloudManager
 
     @BindView(R.id.toolbar) lateinit var toolbar: Toolbar
     @BindView(R.id.drawer) lateinit var drawer: DrawerLayout
@@ -42,9 +48,9 @@ class MainActivity : BaseActivity(), MainContract.View,NavigationView.OnNavigati
     @BindView(R.id.viewpager) lateinit var viewPager: ViewPager
     @BindView(R.id.fab_draft) lateinit var buttonDraft: FloatingActionButton
 
-    lateinit var imageNavAvatar: CircleImageView
-    lateinit var textNavUsername: TextView
-    lateinit var textNavEmail: TextView
+    private lateinit var imageNavAvatar: CircleImageView
+    private lateinit var textNavUsername: TextView
+    private lateinit var textNavEmail: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +58,9 @@ class MainActivity : BaseActivity(), MainContract.View,NavigationView.OnNavigati
 
         if(!accountManager.ensureActiveTokenAvailability(this)){
             return
+        }else {
+            leanCloudManager.registerInstallation()
+            leanCloudManager.initializeImService()
         }
 
         setContentView(R.layout.activity_main)
@@ -76,9 +85,14 @@ class MainActivity : BaseActivity(), MainContract.View,NavigationView.OnNavigati
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragments(arrayListOf(InboxFragment(),OutboxFragment(), HouseFragment(), ConferBoxFragment()))
+        viewPager.adapter = adapter
+        tab.setupWithViewPager(viewPager)
+        tab.getTabAt(0)?.setIcon(R.drawable.ic_inbox_white_24dp)
+        tab.getTabAt(1)?.setIcon(R.drawable.ic_send_white_24dp)
+        tab.getTabAt(2)?.setIcon(R.drawable.ic_group_white_24dp)
+        tab.getTabAt(3)?.setIcon(R.drawable.ic_chat_white_24dp)
 
         presenter.attachView(this)
-        presenter.registerInstallation()
         presenter.loadUser()
     }
 
@@ -96,7 +110,21 @@ class MainActivity : BaseActivity(), MainContract.View,NavigationView.OnNavigati
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        when(item.itemId){
+            R.id.menu_house_create -> {
+                startActivity(Intent(this, CreateHouseActivity::class.java))
+                return true
+            }
+            R.id.menu_house_join -> {
+
+                return true
+            }
+            R.id.menu_user_profile -> {
+                startActivity(Intent(this, UserActivity::class.java))
+                return true
+            }
+        }
+        return false
     }
 
     override fun populateNavHeader(user: User?) {

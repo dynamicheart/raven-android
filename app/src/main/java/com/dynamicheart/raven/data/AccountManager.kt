@@ -69,17 +69,35 @@ class AccountManager
 
     fun fetchToken(loginForm: LoginForm): Observable<Token> {
         return ravenService.login(loginForm)
-                .concatMap { saveToken(it) }
+                .flatMap { saveToken(it) }
     }
 
     fun createUser(createUserForm: CreateUserForm): Observable<User> {
         return ravenService.createNewUser(createUserForm)
-                .concatMap { saveUser(it) }
+                .flatMap { saveUser(it) }
     }
 
     fun syncUser(): Observable<User> {
         return ravenService.getUser()
-                .concatMap { saveUser(it) }
+                .flatMap { saveUser(it) }
+    }
+
+    fun checkout(): Observable<Void> {
+        return Observable.create<Void>({ emitter ->
+            try {
+                val realm = realmProvider.get()
+                realm.beginTransaction()
+                realm.where(User::class.java).findAll().deleteAllFromRealm()
+                realm.where(Token::class.java).findAll().deleteAllFromRealm()
+                realm.commitTransaction()
+                AccountManager.user = null
+                AccountManager.token = null
+                emitter.onComplete()
+            } catch (e : Exception) {
+                Timber.e(e)
+                emitter.onError(e)
+            }
+        })
     }
 
     private fun saveToken(newToken: Token): Observable<Token> {

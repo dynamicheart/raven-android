@@ -16,21 +16,12 @@ class LoginPresenter
                     private val toastHelper: ToastHelper) : LoginContract.Presenter() {
     override fun login(loginForm: LoginForm) {
         accountManager.fetchToken(loginForm)
+                .flatMap { accountManager.syncUser() }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribeBy(
                         onNext = {
-                            accountManager.syncUser()
-                                    .observeOn(AndroidSchedulers.mainThread())
-                                    .subscribeOn(Schedulers.io())
-                                    .subscribeBy(
-                                            onNext = {
-                                                (view as LoginFragment).goBackToPreviousActivity()
-                                            },
-                                            onError = {
-                                                toastHelper.showShortToast(it.message ?: "未知错误")
-                                            }
-                                    )
+                            (view as LoginFragment).goBackToPreviousActivity()
                         },
                         onError = {
                             toastHelper.showShortToast(it.message ?: "未知错误")

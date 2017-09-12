@@ -18,29 +18,23 @@ class SignUpPresenter
                     private val toastHelper: ToastHelper) : SignUpContract.Presenter() {
     override fun signUp(createUserForm: CreateUserForm) {
         accountManager.createUser(createUserForm)
+                .flatMap {
+                    val loginForm = LoginForm(
+                            createUserForm.username,
+                            createUserForm.password
+                    )
+                    accountManager.fetchToken(loginForm)
+                }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribeBy(
                         onNext = {
-                            val loginForm = LoginForm(
-                                    createUserForm.username,
-                                    createUserForm.password
-                            )
-                            accountManager.fetchToken(loginForm)
-                                    .observeOn(AndroidSchedulers.mainThread())
-                                    .subscribeOn(Schedulers.io())
-                                    .subscribeBy(
-                                            onNext = {
-                                                (view as SignUpFragment).goBackToPreviousActivity()
-                                            },
-                                            onError = {
-                                                toastHelper.showShortToast(it.message ?: "未知错误")
-                                            }
-                                    )
+                            (view as SignUpFragment).goBackToPreviousActivity()
                         },
                         onError = {
                             toastHelper.showShortToast(it.message ?: "未知错误")
                         }
+
                 )
     }
 

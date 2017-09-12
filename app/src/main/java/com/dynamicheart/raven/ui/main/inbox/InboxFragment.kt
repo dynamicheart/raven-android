@@ -1,33 +1,62 @@
 package com.dynamicheart.raven.ui.main.inbox
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import butterknife.BindView
 import butterknife.ButterKnife
 import com.dynamicheart.raven.R
+import com.dynamicheart.raven.data.model.raven.InRaven
 import com.dynamicheart.raven.ui.base.BaseFragment
+import com.dynamicheart.raven.util.ToastHelper
 import javax.inject.Inject
 
 class InboxFragment : BaseFragment(), InboxContract.View {
 
     @Inject lateinit var presenter: InboxPresenter
+    @Inject lateinit var toastHelper: ToastHelper
+    @Inject lateinit var inRavensAdapter: InRavensAdapter
+
+    @BindView(R.id.recycler_view) lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fragmentComponent.inject(this)
-        presenter.attachView(this)
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = layoutInflater.inflate(R.layout.fragment_house, container, false)
+        val view = layoutInflater.inflate(R.layout.fragment_inbox, container, false)
         ButterKnife.bind(this, view)
 
+        recyclerView.adapter = inRavensAdapter
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+
+        presenter.attachView(this)
+        presenter.loadInRavens()
         return view
     }
 
     override fun onDestroy() {
         super.onDestroy()
         presenter.detachView()
+    }
+
+    override fun showInRavens(inRavens: List<InRaven>) {
+        inRavensAdapter.inRavens = inRavens
+        inRavensAdapter.notifyDataSetChanged()
+    }
+
+    override fun showInRavensEmpty() {
+        inRavensAdapter.inRavens = emptyList()
+        inRavensAdapter.notifyDataSetChanged()
+        toastHelper.showShortToast(R.string.empty_in_ravens)
+    }
+
+    override fun showError() {
+        toastHelper.showShortToast(R.string.error_loading_ravens)
     }
 }

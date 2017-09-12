@@ -30,7 +30,6 @@ class LoginFragment : BaseFragment(), LoginContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fragmentComponent.inject(this)
-        presenter.attachView(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -49,6 +48,7 @@ class LoginFragment : BaseFragment(), LoginContract.View {
             presenter.login(loginForm)
         })
 
+        presenter.attachView(this)
         return view
     }
 

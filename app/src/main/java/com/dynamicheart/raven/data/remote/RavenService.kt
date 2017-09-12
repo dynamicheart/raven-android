@@ -1,6 +1,7 @@
 package com.dynamicheart.raven.data.remote
 
 import com.dynamicheart.raven.data.model.house.House
+import com.dynamicheart.raven.data.model.house.form.CreateHouseForm
 import com.dynamicheart.raven.data.model.leancloud.Installation
 import com.dynamicheart.raven.data.model.raven.InRaven
 import com.dynamicheart.raven.data.model.raven.Raven
@@ -32,8 +33,11 @@ interface RavenService {
     fun getYourHouses(): Observable<List<House>>
 
     @GET("user/inravens")
-    fun getYourInRavens(@Query("dateAfter") date:Date): Observable<List<InRaven>>
+    fun getYourInRavens(): Observable<List<InRaven>>
 
     @GET("user/ravens")
     fun getYourRavens(): Observable<List<Raven>>
+
+    @POST("houses")
+    fun createNewHouse(@Body createHouseForm: CreateHouseForm): Observable<House>
 }

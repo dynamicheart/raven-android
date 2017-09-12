@@ -5,7 +5,8 @@ import android.content.Context
 import com.dynamicheart.raven.data.DataManager
 import com.dynamicheart.raven.data.AccountManager
 import com.dynamicheart.raven.data.local.PreferencesHelper
-import com.dynamicheart.raven.data.remote.LeanCloudService
+import com.dynamicheart.raven.data.LeanCloudManager
+import com.dynamicheart.raven.data.local.InMemoryDatabaseHelper
 import com.dynamicheart.raven.data.remote.RavenService
 import com.dynamicheart.raven.injection.ApplicationContext
 import com.dynamicheart.raven.injection.module.ApplicationModule
@@ -22,8 +23,9 @@ interface ApplicationComponent {
     fun application(): Application
     fun preferencesHelper(): PreferencesHelper
     fun ravenService(): RavenService
-    fun leanCloudService(): LeanCloudService
+    fun leanCloudManager(): LeanCloudManager
     fun dataManger(): DataManager
     fun accountManager(): AccountManager
+    fun inMemoryDatabaseHelper(): InMemoryDatabaseHelper
     fun toastHelper(): ToastHelper
 }

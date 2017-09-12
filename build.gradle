@@ -5,14 +5,14 @@ buildscript {
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
-        maven { url "http://mvn.leancloud.cn/nexus/content/repositories/public" }
+        maven { url 'http://mvn.leancloud.cn/nexus/content/repositories/public' }
         google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0-beta5'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "io.realm:realm-gradle-plugin:3.7.0"
+        classpath 'io.realm:realm-gradle-plugin:3.7.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -23,7 +23,8 @@ allprojects {
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
-        maven { url "http://mvn.leancloud.cn/nexus/content/repositories/public" }
+        maven { url 'http://mvn.leancloud.cn/nexus/content/repositories/public' }
+        maven { url 'https://jitpack.io'}
         google()
         jcenter()
     }

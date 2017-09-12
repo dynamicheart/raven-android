@@ -11,7 +11,6 @@ object MainContract {
     }
 
     abstract class Presenter: BasePresenter<View>() {
-        abstract fun registerInstallation()
         abstract fun loadUser()
     }
 }

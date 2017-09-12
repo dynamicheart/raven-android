@@ -64,7 +64,7 @@
         tools:layout_editor_absoluteY="8dp"
         tools:text="臧斌宇" />
 
-    <view
+    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="8dp"

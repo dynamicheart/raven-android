@@ -73,11 +73,16 @@ dependencies {
     implementation ("cn.leancloud.android:avoscloud-push:$LEANCLOUD_VERSION@aar"){
         transitive = true
     }
+    implementation "cn.leancloud.android:avoscloud-statistics:$LEANCLOUD_VERSION"
+    implementation "cn.leancloud.android:avoscloud-feedback:$LEANCLOUD_VERSION@aar"
 
     implementation 'com.google.zxing:core:3.3.0'
     implementation 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2'
 
     implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    implementation 'com.github.PhilJay:MPAndroidChart-Realm:v2.0.2@aar'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

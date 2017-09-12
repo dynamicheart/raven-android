@@ -20,6 +20,7 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/text_user_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -30,14 +31,14 @@
                 android:singleLine="true"
                 android:textColor="@color/colorAccent"
                 android:textSize="36sp"
-                app:layout_constraintBottom_toBottomOf="@+id/circleImageView2"
-                app:layout_constraintEnd_toStartOf="@+id/circleImageView2"
+                app:layout_constraintBottom_toBottomOf="@+id/image_house_sigil"
+                app:layout_constraintEnd_toStartOf="@+id/image_house_sigil"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/circleImageView2"
+                app:layout_constraintTop_toTopOf="@+id/image_house_sigil"
                 tools:text="臧斌宇" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageView2"
+                android:id="@+id/image_house_sigil"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginEnd="8dp"
@@ -46,18 +47,18 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/text_label_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:labelFor="@id/text_user_email"
+                android:labelFor="@id/text_user_description"
                 android:text="@string/user_profile_email"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/circleImageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/image_house_sigil" />
 
             <TextView
-                android:id="@+id/text_user_email"
+                android:id="@+id/text_user_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -67,33 +68,33 @@
                 android:singleLine="true"
                 android:textAlignment="textEnd"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView4"
-                app:layout_constraintTop_toBottomOf="@+id/circleImageView2"
+                app:layout_constraintStart_toEndOf="@+id/text_label_description"
+                app:layout_constraintTop_toBottomOf="@+id/image_house_sigil"
                 tools:text="zangbinyu@sjtu.edu.cn" />
 
-            <view
-                android:id="@+id/view"
+            <View
+                android:id="@+id/view_divider1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:background="#D6D6D6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_user_email" />
+                app:layout_constraintTop_toBottomOf="@+id/text_user_description" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/text_label_founder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:labelFor="@id/text_user_email"
+                android:labelFor="@id/text_user_description"
                 android:text="@string/user_profile_phone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view" />
+                app:layout_constraintTop_toBottomOf="@+id/view_divider1" />
 
             <TextView
-                android:id="@+id/text_user_phone"
+                android:id="@+id/text_house_founder_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -103,29 +104,33 @@
                 android:singleLine="true"
                 android:textAlignment="textEnd"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView5"
-                app:layout_constraintTop_toBottomOf="@+id/view"
+                app:layout_constraintStart_toEndOf="@+id/text_label_founder"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider1"
                 tools:text="18277705909" />
 
-            <view
-                android:id="@+id/view2"
+            <View
+                android:id="@+id/view_divider2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:background="#D6D6D6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_user_phone" />
+                app:layout_constraintTop_toBottomOf="@+id/text_house_founder_name" />
 
             <Button
+                android:id="@+id/button_logout"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/user_profile_logout"
                 android:textAppearance="?android:textAppearanceButton"
-                app:layout_constraintTop_toBottomOf="@+id/view2"
-                tools:layout_editor_absoluteX="16dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider2" />
 
         </android.support.constraint.ConstraintLayout>
 
