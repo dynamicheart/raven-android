@@ -5,11 +5,14 @@ import com.dynamicheart.raven.ui.base.BasePresenter
 import com.dynamicheart.raven.ui.base.MvpView
 
 object HouseDetailContract {
-    interface View: MvpView{
-        fun  showHouse(house: House)
+    interface View : MvpView {
+        fun showHouse(house: House)
+        fun showLeaveHouseSuccess()
     }
 
-    abstract class Presenter: BasePresenter<View>(){
+    abstract class Presenter : BasePresenter<View>() {
         abstract fun loadHouse(index: Int)
+        abstract fun loadHouse()
+        abstract fun leaveHouse()
     }
 }

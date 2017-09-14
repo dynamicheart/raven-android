@@ -1,22 +1,23 @@
 package com.dynamicheart.raven.data
 
 import android.content.Context
-import com.avos.avoscloud.*
+import com.avos.avoscloud.AVException
+import com.avos.avoscloud.AVInstallation
+import com.avos.avoscloud.SaveCallback
 import com.avos.avoscloud.im.v2.AVIMClient
-import com.avos.avoscloud.im.v2.AVIMMessageManager
-import com.avos.avoscloud.im.v2.AVIMTypedMessage
-import com.dynamicheart.raven.injection.ApplicationContext
-import javax.inject.Inject
-import javax.inject.Singleton
 import com.dynamicheart.raven.data.model.leancloud.Installation
 import com.dynamicheart.raven.data.model.leancloud.form.UpdateInstallationForm
 import com.dynamicheart.raven.data.remote.RavenService
+import com.dynamicheart.raven.injection.ApplicationContext
 import com.dynamicheart.raven.util.ToastHelper
-import com.dynamicheart.raven.util.leancloud.ImMessageHandler
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
+import javax.inject.Singleton
+
+
 
 
 @Singleton
@@ -26,20 +27,13 @@ class LeanCloudManager
                     private val toastHelper: ToastHelper) {
 
     companion object {
-        @JvmStatic private val LEAN_CLOUD_APP_ID = "TFJOwzoaKwEFSMyIMIV4XPHY-gzGzoHsz"
-        @JvmStatic private val LEAN_CLOUD_APP_KEY = "InFOgxkqvOfz5Bl9YaXijdHd"
+        @JvmStatic val LEAN_CLOUD_APP_ID = "TFJOwzoaKwEFSMyIMIV4XPHY-gzGzoHsz"
+        @JvmStatic val LEAN_CLOUD_APP_KEY = "InFOgxkqvOfz5Bl9YaXijdHd"
 
-        @JvmStatic private var leanCloudServiceEnabled = false
+        @JvmStatic var leanCloudServiceEnabled = false
     }
 
     lateinit var avImClient: AVIMClient
-
-    init {
-        AVOSCloud.initialize(context, LEAN_CLOUD_APP_ID, LEAN_CLOUD_APP_KEY)
-        AVOSCloud.setDebugLogEnabled(true)
-        AVOSCloud.setLastModifyEnabled(true)
-        AVAnalytics.enableCrashReport(context, true)
-    }
 
     fun registerInstallation() {
         Observable.create<Installation>({ emitter ->

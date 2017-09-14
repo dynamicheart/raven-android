@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_selection"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginBottom="0dp"
@@ -20,17 +20,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
+        android:id="@+id/image_user_avatar"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginBottom="0dp"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/image_selection"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/text_member_role"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
@@ -42,13 +42,13 @@
         android:singleLine="true"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/circleImageView"
+        app:layout_constraintStart_toEndOf="@+id/image_user_avatar"
         app:layout_constraintTop_toTopOf="parent"
         tools:background="@color/colorAccent"
         tools:text="Lord" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/text_member_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
@@ -59,12 +59,13 @@
         android:singleLine="true"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/text_member_role"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteY="8dp"
         tools:text="臧斌宇" />
 
     <View
+        android:id="@+id/view_divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="8dp"
@@ -72,6 +73,6 @@
         android:background="#D6D6D6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/image_user_avatar" />
 
 </android.support.constraint.ConstraintLayout>

@@ -13,15 +13,15 @@ import com.dynamicheart.raven.R
 import com.dynamicheart.raven.data.model.house.House
 import com.dynamicheart.raven.ui.base.BaseFragment
 import com.dynamicheart.raven.ui.housedetail.HouseDetailActivity
-import com.dynamicheart.raven.util.andorid.RecyclerItemClickListener
 import com.dynamicheart.raven.util.ToastHelper
+import com.dynamicheart.raven.util.andorid.RecyclerItemClickListener
 import javax.inject.Inject
 
 class HouseFragment : BaseFragment(), HouseContract.View {
 
     companion object {
-        @JvmStatic val IN_MEMORY_DB_CURRENT_HOUSE = "IN_MEMORY_DB_CURRENT_HOUSE"
-        @JvmStatic val IN_MEMORY_DB_HOUSE_INDEX = "IN_MEMORY_DB_HOUSE_INDEX"
+        @JvmStatic val IN_MEMORY_DB_HOUSE_LIST = "IN_MEMORY_DB_HOUSE_LIST"
+        @JvmStatic val EXTRA_HOUSE_INDEX = "EXTRA_HOUSE_INDEX"
     }
 
     @Inject lateinit var presenter: HousePresenter
@@ -37,7 +37,7 @@ class HouseFragment : BaseFragment(), HouseContract.View {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = layoutInflater.inflate(R.layout.fragment_house, container, false)
+        val view = inflater.inflate(R.layout.fragment_house, container, false)
         ButterKnife.bind(this, view)
 
         recyclerView.adapter = housesAdapter
@@ -45,7 +45,7 @@ class HouseFragment : BaseFragment(), HouseContract.View {
         recyclerView.addOnItemTouchListener(RecyclerItemClickListener(activity, recyclerView, object : RecyclerItemClickListener.OnItemClickListener {
             override fun onItemClick(view: View, position: Int) {
                 val intent = Intent(activity, HouseDetailActivity::class.java)
-                intent.putExtra(IN_MEMORY_DB_HOUSE_INDEX, position)
+                intent.putExtra(EXTRA_HOUSE_INDEX, position)
                 startActivity(intent)
             }
 

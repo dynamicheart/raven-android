@@ -45,14 +45,14 @@ class AuthenticatorActivity : BaseActivity(), AuthenticatorContract.View {
     override fun showLoginFragment() {
         supportFragmentManager.beginTransaction()
                 .add(R.id.fragment_container, LoginFragment())
-                .addToBackStack(LoginFragment.LOGIN_FRAGMENT_NAME)
+                .addToBackStack(LoginFragment::class.java.name)
                 .commit()
     }
 
     override fun showSignUpFragment() {
         supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, SignUpFragment())
-                .addToBackStack(SignUpFragment.SIGN_UP_FRAGMENT_NAME)
+                .addToBackStack(SignUpFragment::class.java.name)
                 .commit()
     }
 
@@ -66,8 +66,8 @@ class AuthenticatorActivity : BaseActivity(), AuthenticatorContract.View {
     }
 
     override fun goBackToPreviousActivity() {
-        val onAddedIntent = intent.getParcelableExtra<Intent>(EXTRA_ON_ADDED_INTENT)
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
+        val intent = Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
     }
 }

@@ -15,9 +15,6 @@ import com.dynamicheart.raven.ui.base.BaseFragment
 import javax.inject.Inject
 
 class SignUpFragment: BaseFragment(), SignUpContract.View {
-    companion object {
-        @JvmStatic val SIGN_UP_FRAGMENT_NAME = SignUpFragment::class.java.name
-    }
 
     @Inject lateinit var presenter: SignUpPresenter
 

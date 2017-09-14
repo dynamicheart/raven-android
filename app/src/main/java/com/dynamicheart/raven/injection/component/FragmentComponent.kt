@@ -8,6 +8,8 @@ import com.dynamicheart.raven.ui.main.conferbox.ConferBoxFragment
 import com.dynamicheart.raven.ui.main.house.HouseFragment
 import com.dynamicheart.raven.ui.main.inbox.InboxFragment
 import com.dynamicheart.raven.ui.main.outbox.OutboxFragment
+import com.dynamicheart.raven.ui.select.selecthouse.SelectHouseFragment
+import com.dynamicheart.raven.ui.select.selectmember.SelectMemberFragment
 import dagger.Subcomponent
 
 @PerFragment
@@ -20,4 +22,6 @@ interface FragmentComponent {
     fun inject(outboxFragment: OutboxFragment)
     fun inject(houseFragment: HouseFragment)
     fun inject(conferBoxFragment: ConferBoxFragment)
+    fun inject(selectHouseFragment: SelectHouseFragment)
+    fun inject(selectMemberFragment: SelectMemberFragment)
 }

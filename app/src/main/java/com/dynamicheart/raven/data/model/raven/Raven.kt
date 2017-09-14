@@ -13,6 +13,7 @@ data class Raven(
         var description: String?,
         var type: Int?,
         var optionPolls: List<OptionPoll>?,
+        var attachmentId: String,
         var mold: Boolean? = false,
         var moldId: String?,
         var createdDate: Date?

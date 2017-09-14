@@ -13,11 +13,11 @@ import android.support.v4.view.ViewPager
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
-import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.avos.avoscloud.PushService
 import com.dynamicheart.raven.R
 import com.dynamicheart.raven.data.AccountManager
 import com.dynamicheart.raven.data.LeanCloudManager
@@ -25,14 +25,13 @@ import com.dynamicheart.raven.data.model.user.User
 import com.dynamicheart.raven.ui.base.BaseActivity
 import com.dynamicheart.raven.ui.createhouse.CreateHouseActivity
 import com.dynamicheart.raven.ui.draft.DraftActivity
-import com.dynamicheart.raven.ui.housedetail.HouseDetailActivity
-import com.dynamicheart.raven.ui.main.conferbox.ConferBoxFragment
+import com.dynamicheart.raven.ui.findhouse.FindHouseActivity
 import com.dynamicheart.raven.ui.main.house.HouseFragment
 import com.dynamicheart.raven.ui.main.inbox.InboxFragment
 import com.dynamicheart.raven.ui.main.outbox.OutboxFragment
 import com.dynamicheart.raven.ui.user.UserActivity
 import de.hdodenhof.circleimageview.CircleImageView
-import java.util.ArrayList
+import java.util.*
 import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainContract.View,NavigationView.OnNavigationItemSelectedListener {
@@ -61,6 +60,7 @@ class MainActivity : BaseActivity(), MainContract.View,NavigationView.OnNavigati
         }else {
             leanCloudManager.registerInstallation()
             leanCloudManager.initializeImService()
+            PushService.setDefaultPushCallback(this, MainActivity::class.java)
         }
 
         setContentView(R.layout.activity_main)
@@ -84,13 +84,12 @@ class MainActivity : BaseActivity(), MainContract.View,NavigationView.OnNavigati
         }
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragments(arrayListOf(InboxFragment(),OutboxFragment(), HouseFragment(), ConferBoxFragment()))
+        adapter.addFragments(arrayListOf(InboxFragment(),OutboxFragment(), HouseFragment()))
         viewPager.adapter = adapter
         tab.setupWithViewPager(viewPager)
         tab.getTabAt(0)?.setIcon(R.drawable.ic_inbox_white_24dp)
         tab.getTabAt(1)?.setIcon(R.drawable.ic_send_white_24dp)
         tab.getTabAt(2)?.setIcon(R.drawable.ic_group_white_24dp)
-        tab.getTabAt(3)?.setIcon(R.drawable.ic_chat_white_24dp)
 
         presenter.attachView(this)
         presenter.loadUser()
@@ -116,7 +115,7 @@ class MainActivity : BaseActivity(), MainContract.View,NavigationView.OnNavigati
                 return true
             }
             R.id.menu_house_join -> {
-
+                startActivity(Intent(this, FindHouseActivity::class.java))
                 return true
             }
             R.id.menu_user_profile -> {

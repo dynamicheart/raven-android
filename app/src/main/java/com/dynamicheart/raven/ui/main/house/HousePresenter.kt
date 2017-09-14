@@ -31,7 +31,7 @@ class HousePresenter
                 .subscribeBy(
                         onNext = {
                             if (it.isEmpty()) view.showHousesEmpty() else view.showHouses(it)
-                            inMemoryDatabaseHelper.store(HouseFragment::class.java.name, HouseFragment.IN_MEMORY_DB_CURRENT_HOUSE, it)
+                            inMemoryDatabaseHelper.store(HouseFragment::class.java.name, HouseFragment.IN_MEMORY_DB_HOUSE_LIST, it)
                         },
                         onError = {
                             Timber.e(it, "There was an error loading the houses.")

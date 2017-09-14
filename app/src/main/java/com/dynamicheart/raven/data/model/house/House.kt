@@ -15,6 +15,6 @@ data class House(
         var publicity: Boolean?,
         var tags: Set<String>?,
         var founder: UserRef?,
-        var members: Set<Member>?,
+        var members: List<Member>?,
         var createdDate: Date?
 )

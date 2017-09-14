@@ -16,9 +16,6 @@ import javax.inject.Inject
 
 class LoginFragment : BaseFragment(), LoginContract.View {
 
-    companion object {
-        @JvmStatic val LOGIN_FRAGMENT_NAME = LoginFragment::class.java.name
-    }
 
     @Inject lateinit var presenter: LoginPresenter
 

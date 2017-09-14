@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_in_raven_description"
         tools:text="12小时前" />
 
-    <view
+    <View
         android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="1dp"

@@ -20,7 +20,7 @@ class UserActivity: BaseActivity(), UserContract.View {
     @Inject lateinit var toastHelper: ToastHelper
 
     @BindView(R.id.text_user_name)lateinit var textUserName: TextView
-    @BindView(R.id.image_house_sigil) lateinit var imageUserAvatar: CircleImageView
+    @BindView(R.id.image_user_avatar) lateinit var imageUserAvatar: CircleImageView
     @BindView(R.id.text_user_description) lateinit var textUserEmail: TextView
     @BindView(R.id.text_house_founder_name) lateinit var textUserPhone: TextView
     @BindView(R.id.button_logout) lateinit var buttonLogout: Button

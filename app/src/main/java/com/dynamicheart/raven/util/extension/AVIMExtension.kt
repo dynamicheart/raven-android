@@ -2,6 +2,7 @@ package com.dynamicheart.raven.util.extension
 
 import com.avos.avoscloud.im.v2.*
 import com.avos.avoscloud.im.v2.callback.AVIMConversationCreatedCallback
+import com.avos.avoscloud.im.v2.callback.AVIMConversationQueryCallback
 import com.avos.avoscloud.im.v2.callback.AVIMMessagesQueryCallback
 import io.reactivex.Observable
 
@@ -43,6 +44,21 @@ fun AVIMClient.rxCreateConversation(members: ArrayList<String>, name: String?, a
                     emitter.onNext(conversation)
                     emitter.onComplete()
                 }else{
+                    emitter.onError(e)
+                }
+            }
+        })
+    })
+}
+
+fun AVIMConversationsQuery.rxFindInBackGround(): Observable<List<AVIMConversation>>{
+    return Observable.create<List<AVIMConversation>>({ emitter ->
+        this.findInBackground(object : AVIMConversationQueryCallback(){
+            override fun done(list: List<AVIMConversation>, e: AVIMException?) {
+                if(e == null){
+                    emitter.onNext(list)
+                    emitter.onComplete()
+                }else {
                     emitter.onError(e)
                 }
             }

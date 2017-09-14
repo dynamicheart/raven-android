@@ -31,14 +31,14 @@
                 android:singleLine="true"
                 android:textColor="@color/colorAccent"
                 android:textSize="36sp"
-                app:layout_constraintBottom_toBottomOf="@+id/image_house_sigil"
-                app:layout_constraintEnd_toStartOf="@+id/image_house_sigil"
+                app:layout_constraintBottom_toBottomOf="@+id/image_user_avatar"
+                app:layout_constraintEnd_toStartOf="@+id/image_user_avatar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/image_house_sigil"
+                app:layout_constraintTop_toTopOf="@+id/image_user_avatar"
                 tools:text="臧斌宇" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/image_house_sigil"
+                android:id="@+id/image_user_avatar"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginEnd="8dp"
@@ -55,7 +55,7 @@
                 android:labelFor="@id/text_user_description"
                 android:text="@string/user_profile_email"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_house_sigil" />
+                app:layout_constraintTop_toBottomOf="@+id/image_user_avatar" />
 
             <TextView
                 android:id="@+id/text_user_description"
@@ -69,7 +69,7 @@
                 android:textAlignment="textEnd"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/text_label_description"
-                app:layout_constraintTop_toBottomOf="@+id/image_house_sigil"
+                app:layout_constraintTop_toBottomOf="@+id/image_user_avatar"
                 tools:text="zangbinyu@sjtu.edu.cn" />
 
             <View

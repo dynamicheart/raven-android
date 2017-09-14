@@ -3,10 +3,8 @@ package com.dynamicheart.raven.data.local
 import com.dynamicheart.raven.data.model.raven.InRaven
 import io.reactivex.Observable
 import io.realm.Realm
-import io.realm.RealmResults
 import io.realm.Sort
 import timber.log.Timber
-import java.util.*
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
@@ -39,6 +37,23 @@ class DatabaseHelper
                 emitter.onComplete()
             } catch (e: Exception) {
                 Timber.e(e)
+                emitter.onError(e)
+            }
+        })
+    }
+
+    fun getOneInRaven(id: String): Observable<InRaven>{
+        return Observable.create<InRaven>({ emitter ->
+            try{
+                val realm = realmProvider.get()
+                val result = realm.where(InRaven::class.java).equalTo("id", id).findFirst()
+                if(result != null){
+                    emitter.onNext(realm.copyFromRealm(result))
+                    emitter.onComplete()
+                }else {
+                    emitter.onError(Exception("Local find failed"))
+                }
+            } catch (e: Exception){
                 emitter.onError(e)
             }
         })
