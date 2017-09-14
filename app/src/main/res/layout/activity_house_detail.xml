@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp">
+
+            <TextView
+                android:id="@+id/text_house_name"
+                app:layout_constraintBottom_toBottomOf="@+id/image_user_avatar"
+                app:layout_constraintEnd_toStartOf="@+id/image_user_avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/image_user_avatar"
+                tools:text="上海交大软院"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/colorAccent"
+                android:textSize="36sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_user_avatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/text_label_id"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_user_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/text_user_description"
+                android:text="@string/house_id" />
+
+            <TextView
+                android:id="@+id/text_house_id"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_label_description"
+                app:layout_constraintTop_toBottomOf="@+id/image_user_avatar"
+                tools:text="59b6792d143729536d1e9fb6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAlignment="textEnd" />
+
+            <View
+                android:id="@+id/view_divider0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_house_id"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#D6D6D6" />
+
+            <TextView
+                android:id="@+id/text_label_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/text_user_description"
+                android:text="@string/house_description" />
+
+            <TextView
+                android:id="@+id/text_house_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_label_description"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider0"
+                tools:text="主要发一些课程通知"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAlignment="textEnd" />
+
+            <View
+                android:id="@+id/view_divider1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_house_description"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#D6D6D6" />
+
+            <TextView
+                android:id="@+id/text_label_founder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/text_user_description"
+                android:text="@string/house_founder_name" />
+
+            <TextView
+                android:id="@+id/text_house_founder_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_label_founder"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider1"
+                tools:text="臧斌宇"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAlignment="textEnd" />
+
+            <View
+                android:id="@+id/view_divider2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_house_founder_name"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#D6D6D6" />
+
+            <TextView
+                android:id="@+id/text_label_created_time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/text_user_description"
+                android:text="@string/house_created_time" />
+
+            <TextView
+                android:id="@+id/text_house_created_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_label_created_time"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider2"
+                tools:text="2017年"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAlignment="textEnd" />
+
+            <View
+                android:id="@+id/view_divider3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_house_created_time"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#D6D6D6" />
+
+            <TextView
+                android:id="@+id/text_label_total_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/text_user_description"
+                android:text="@string/house_total_number" />
+
+            <TextView
+                android:id="@+id/text_house_total_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_label_founder"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider3"
+                tools:text="25人"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAlignment="textEnd" />
+
+            <View
+                android:id="@+id/view_divider4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_house_total_number"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#D6D6D6" />
+
+            <TextView
+                android:id="@+id/text_label_publicity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/text_user_description"
+                android:text="@string/house_publicity" />
+
+            <TextView
+                android:id="@+id/text_house_publicity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_label_founder"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider4"
+                tools:text="公开"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAlignment="textEnd" />
+
+            <View
+                android:id="@+id/view_divider5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_house_publicity"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#D6D6D6" />
+
+            <TextView
+                android:id="@+id/text_label_status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/text_user_description"
+                android:text="@string/house_status" />
+
+            <TextView
+                android:id="@+id/text_house_status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_label_founder"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider5"
+                tools:text="臧斌宇"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAlignment="textEnd" />
+
+            <View
+                android:id="@+id/view_divider6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_house_status"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#D6D6D6" />
+
+            <Button
+                android:id="@+id/button_look_up_members"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/house_look_up_members"
+                android:textAppearance="?android:textAppearanceButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider6" />
+
+            <Button
+                android:id="@+id/button_exit"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/house_exit"
+                android:textAppearance="?android:textAppearanceButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_look_up_members" />
+
+            <Button
+                android:id="@+id/button_edit"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:text="@string/house_edit"
+                android:textAppearance="?android:textAppearanceButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_exit"
+                tools:visibility="visible"/>
+
+            <Button
+                android:id="@+id/button_get_serves"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:text="@string/house_serve_management"
+                android:textAppearance="?android:textAppearanceButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_edit"
+                tools:visibility="visible"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</ScrollView>
